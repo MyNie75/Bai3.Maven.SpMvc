@@ -19,10 +19,9 @@
 	 <bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix">
-			<value>/Views/</value>
+			<value>/WEB-INF/Views/</value>
 		</property>
-		<property name="suffix">
-			<value>.jsp</value>
+		<property name="suffix"><value>.jsp</value>
 		</property>
 	</bean>
 	<!-- Cấu hình các package chứa các contronller -->

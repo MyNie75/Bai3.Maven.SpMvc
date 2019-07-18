@@ -6,10 +6,12 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import Student.Model.Student;
+import poly.bean.Major;
 
 
 @Controller
@@ -40,6 +42,17 @@ public class ControllerTT {
 			return "frmStuden";
 			
 		}
+		@ModelAttribute("majors")
+		public List<Major> getMajors() {
+		List<Major> majors = new ArrayList<Major>();
+		majors.add(new Major("APP", "Ứng dụng phần mềm"));
+		majors.add(new Major("WEB", "Thiết kế trang web"));
+		majors.add(new Major("JAVA", "Lập trình java web"));
+		majors.add(new Major("C#", "Lập Trình DOTNET web"));
+		majors.add(new Major("C++", "Lập Trinh C++"));
+		return majors;
+		}
+		
 		
 		@RequestMapping(params = "btCapN")
 		public String updatr(Model model) {
